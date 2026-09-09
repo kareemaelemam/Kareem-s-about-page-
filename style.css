@@ -1,0 +1,90 @@
+/* ==========================================================
+   COLOR PALETTE
+   ========================================================== */
+/* Background:      #F4F1EA  (warm off-white) */
+/* Text (primary):  #23272E  (near-black slate) */
+/* Text (muted):    #5C6470  (soft gray) */
+/* Accent:          #D97D42  (burnt orange) */
+/* Accent (hover):  #B8632F  (darker burnt orange) */
+/* ========================================================== */
+
+:root {
+  --bg: #F4F1EA;
+  --text: #23272E;
+  --text-muted: #5C6470;
+  --accent: #D97D42;
+  --accent-dark: #B8632F;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+h2 {
+  color: var(--accent-dark);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+.links ul {
+  list-style: none;
+}
+
+.links li {
+  margin-bottom: 8px;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 40px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
