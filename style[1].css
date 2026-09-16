@@ -1,0 +1,126 @@
+/* =========================================================
+   layout.css
+   External stylesheet for the "About" page layout.
+   Uses CSS Flexbox to arrange the page into a navigation
+   sidebar and a main content area.
+   ========================================================= */
+
+/* Reset default spacing so the layout math is predictable */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-color: #f4f6f8;
+}
+
+/* Header bar spans the full width above the layout */
+header {
+  background-color: #8a2c2c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* -------------------------------------------------------
+   PAGE LAYOUT (Flexbox)
+   .page-layout is the flex container. It holds two flex
+   items side by side: the navigation sidebar and the main
+   content section. flex-direction: row (the default) lays
+   them out horizontally; they stack on small screens via
+   the media query at the bottom of this file.
+   ------------------------------------------------------- */
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* -------------------------------------------------------
+   NAVIGATION SIDEBAR
+   flex: 0 0 200px means "don't grow, don't shrink, start
+   at 200px wide" — a fixed-width column for links.
+   ------------------------------------------------------- */
+nav.side-nav {
+  flex: 0 0 200px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+nav.side-nav h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #8a2c2c;
+}
+
+/* Stack nav links vertically inside the sidebar using flex */
+nav.side-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav.side-nav a {
+  text-decoration: none;
+  color: #2c5f8a;
+  font-weight: bold;
+}
+
+nav.side-nav a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------
+   MAIN CONTENT AREA
+   flex: 1 lets this section grow to fill the remaining
+   space next to the fixed-width sidebar.
+   ------------------------------------------------------- */
+main.content {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+main.content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px auto;
+  border: 3px solid #8a2c2c;
+  border-radius: 6px;
+}
+
+main.content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------
+   RESPONSIVE BEHAVIOR
+   On narrow screens, switch the flex container to a
+   column so the nav sits above the content instead of
+   beside it.
+   ------------------------------------------------------- */
+@media (max-width: 600px) {
+  .page-layout {
+    flex-direction: column;
+  }
+
+  nav.side-nav {
+    flex: 1;
+    width: 100%;
+  }
+}
